@@ -1,4 +1,5 @@
-params.cutoff=0.50
+params.cutoff = 0.50
+params.fasta = "bacterial_dna.fasta"
 
 process inputs {
 
@@ -25,6 +26,6 @@ process inputs {
   """
 }
 workflow {
-inputs=channel.fromPath(params.input)
-pross=inputs(inputFile,params.cutoff)
+  input_channel = Channel.of([params.cutoff, file(params.fasta)])
+  process_inputs(input_channel)
 }
