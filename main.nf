@@ -22,5 +22,6 @@ process inputs {
   """
 }
 workflow {
- Channel.fromTuple(cutoff, fasta_file_path)
+    Channel.from([ [0.5, 'example.fasta'] ]).set { input_ch }
+    process_inputs(input_ch)
 }
