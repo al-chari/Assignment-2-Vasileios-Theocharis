@@ -1,3 +1,5 @@
+params.cutoff=0.50
+
 process inputs {
 
   //fasta file name and GC cutoff content inputs Fasta file should be set as path and GC content as decimal, first GC content then file path
