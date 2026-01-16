@@ -9,7 +9,7 @@ process inputs {
     path fasta_file_path
     
   output:
-    path "output.txt"
+    path output.txt
   
   //output script takes up the two variables given and uses them to create a new txt file if the GC content is greater than the cutoff
   script:
