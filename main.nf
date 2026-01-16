@@ -22,6 +22,5 @@ process inputs {
   """
 }
 workflow {
-    Channel.from([ [0.5, 'example.fasta'] ]).set { input_ch }
-    process_inputs(input_ch)
+    Channel.from([ [0.5, 'example.fasta'] ])
 }
