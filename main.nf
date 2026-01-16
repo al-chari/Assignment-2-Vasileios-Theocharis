@@ -2,7 +2,8 @@ process inputs {
 
   //fasta file name and GC cutoff content inputs Fasta file should be set as path and GC content as decimal, first GC content then file path
   input:
-    tuple val(cutoff), path(fasta_file_path)
+    val cutoff
+    path fasta_file_path
     
   output:
     path output.txt
@@ -22,5 +23,6 @@ process inputs {
   """
 }
 workflow {
-    Channel.from([ [0.5, 'example.fasta'] ])
+inputs=channel.fromPath(param.input)
+pross=inputs(inputFile,param.cutoff)
 }
