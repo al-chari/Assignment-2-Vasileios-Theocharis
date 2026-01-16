@@ -27,5 +27,5 @@ process inputs {
 }
 workflow {
   input_channel = Channel.of([params.cutoff, file(params.fasta)])
-  process_inputs(input_channel)
+  inputs(input_channel)
 }
