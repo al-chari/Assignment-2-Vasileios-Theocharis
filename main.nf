@@ -13,11 +13,14 @@ process inputs {
   #!/usr/bin/env python3
   from Bio import SeqIO
   from Bio.SeqUtils import gc_fraction
-  fasta_file = seqIO.parse("$fasta_file_path", "fasta")
+  fasta_file = SeqIO.parse("$fasta_file_path", "fasta")
   cutoff = $cutoff
   with open("output.txt", "a") as out:
   	for record in fasta_file:
   		if gc_fraction(record.seq) > cutoff:
   		    SeqIO.write(record, out, "fasta")
   """
+}
+workflow {
+ Channel.fromTuple(cutoff, fasta_file_path)
 }
