@@ -25,6 +25,6 @@ process inputs {
   """
 }
 workflow {
-inputs=channel.fromPath(param.input)
-pross=inputs(inputFile,param.cutoff)
+inputs=channel.fromPath(params.input)
+pross=inputs(inputFile,params.cutoff)
 }
